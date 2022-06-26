@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">HomePage</string>
+    <string name="Dashboard">Home</string>
+    <string name="my_culture"> <b>Culture That Unites us Together</b><i>Agriculture</i></string>
+    <string name="Dashboard_moto"><b>"Culture That Unites Us Together"</b></string>
+    <string name="search_hint">Search Plants</string>
+    <string name="logo">logo</string>
+    <string name="lorem">A new series where we will be building  of the Events App where we will be implementing the custom collapsing toolbar with a custom search bar</string>
+    <string name="Dashboard_moto1">Agriculture</string>
+    <string name="plant_disease_detection">Plant Disease Detection</string>
+    <string name="welcomeText">Good Morning\n Welcome To My Culture</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="soil_detection">Soil \n Detection</string>
+    <string name="pest_detection">Pest \n Detection</string>
+    <string name="plant_disease_pest_detection">Plant Disease Pest Detection</string>
+    <string name="pest_bg">pestImage</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home">Home</string>
+    <string name="menu">Menu</string>
+    <string name="you">You</string>
+</resources>

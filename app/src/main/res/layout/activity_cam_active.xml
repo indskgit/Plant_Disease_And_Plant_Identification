@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CamActive">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@drawable/dashboard_bg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="0dp"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="30dp"
+                    android:text="@string/plant_disease_pest_detection"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="270dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="23dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/camPic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/plant_disease"
+                android:scaleType="fitCenter"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="120dp"
+        android:layout_height="100dp"
+        android:orientation="vertical"
+        android:layout_marginBottom="6dp"
+        android:layout_gravity="bottom|center">
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:orientation="vertical"-->
+<!--            android:elevation="4dp"-->
+<!--            android:background="@drawable/content_bg">-->
+
+
+            <Button
+                android:id="@+id/fab"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_margin="9dp"
+                android:elevation="4dp"
+                android:background="@drawable/ic__671722_camera_icon"/>
+
+        </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="90dp"
+        android:layout_gravity="bottom"
+        android:background="@drawable/ic_cam_wave_bg"/>
+
+
+<!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            app:itemTextColor="@drawable/bottom_icon_selector"
+            app:itemIconTint="@drawable/bottom_icon_selector"
+            android:background="@drawable/bottom_app_bar_bg"
+            android:elevation="4dp"/>
+
+    </LinearLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

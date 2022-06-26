@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:contentScrim="@color/textBlue"
+            app:expandedTitleTextAppearance="@style/expandedBarTextStyle"
+            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+            app:titleTextColor="@color/white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:background="@drawable/dashboard_bg"
+                android:orientation="vertical"
+                android:paddingHorizontal="20dp">
+
+                <ImageView
+                    android:id="@+id/treeLogo"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="21dp"
+                    android:background="@drawable/ic_nature_plant_tree_icon"
+                    android:contentDescription="@string/logo">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/moto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:width="120dp"
+                    android:fontFamily="cursive"
+                    android:text="@string/Dashboard_moto"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/black"
+                    android:textSize="29sp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/Dashboard_moto1"
+                    android:textAlignment="center"
+                    android:textColor="#546E7A"
+                    android:textSize="29sp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/search_Bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="08dp"
+                    android:autofillHints="Search Plants"
+                    android:background="@drawable/search_bg"
+                    android:drawableEnd="@drawable/search_btn"
+                    android:elevation="4dp"
+                    android:hint="@string/search_hint"
+                    android:inputType="text"
+                    android:minHeight="50dp"
+                    android:paddingHorizontal="23dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@android:color/white"
+                    android:textSize="22sp">
+
+                </EditText>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="wrap_content"
+                android:layout_height="?attr/actionBarSize"
+                app:titleTextColor="@color/white">
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:textSize="23sp"-->
+            <!--                    android:textColor="@color/black"-->
+            <!--                    android:text="@string/lorem">-->
+
+            <!--                </TextView>-->
+
+            <LinearLayout
+                android:id="@+id/diseaseDetection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:layout_marginStart="90dp"
+                android:orientation="vertical">
+
+                <!--                    <androidx.cardview.widget.CardView-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:foreground="@drawable/nestedscroll_bg">-->
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/frame_layoutl_bg">
+
+                    <!--                            <LinearLayout-->
+                    <!--                                android:layout_width="match_parent"-->
+                    <!--                                android:layout_height="195dp"-->
+                    <!--                                android:orientation="vertical">-->
+
+                    <ImageView
+                        android:id="@+id/plantDisease"
+                        android:layout_width="129dp"
+                        android:layout_height="156dp"
+                        android:layout_marginTop="27dp"
+                        android:background="@drawable/plant_tropical"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                    </ImageView>
+
+                    <!--                            </LinearLayout>-->
+
+                    <TextView
+                        android:id="@+id/plant_Disease"
+                        android:layout_width="213dp"
+                        android:layout_height="75dp"
+                        android:layout_gravity="center|center_horizontal"
+                        android:layout_marginStart="57dp"
+                        android:gravity="center_horizontal"
+                        android:text="@string/plant_disease_detection"
+                        android:textColor="#F3F3F3"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+
+                </FrameLayout>
+
+                <!--                    </androidx.cardview.widget.CardView>-->
+
+
+                <!--                    making new frame Layout and then adding Image tom it to give same color for all nested view to same-->
+                <!--                    i can define it inside previous frame layout but mai color dalna chata tha aur wasie har ek me dalna padta -->
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/frame_layoutl_bg">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="195dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/pest"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="27dp"
+                            android:layout_marginBottom="59dp"
+                            android:background="@drawable/insect"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:scaleType="centerCrop" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/pest_Detection"
+                        android:layout_width="213dp"
+                        android:layout_height="69dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="57dp"
+                        android:text="@string/pest_detection"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/frame_layoutl_bg">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="195dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/pestDetection"
+                            android:layout_width="129dp"
+                            android:layout_height="156dp"
+                            android:layout_marginTop="27dp"
+                            android:background="@drawable/soil_detection"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:scaleType="centerCrop" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/soilDetection"
+                        android:layout_width="290dp"
+                        android:layout_height="69dp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="57dp"
+                        android:text="@string/soil_detection"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textSize="30sp"
+                        android:textStyle="bold" />
+                </FrameLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            app:itemTextColor="@drawable/bottom_icon_selector"
+            app:itemIconTint="@drawable/bottom_icon_selector"
+            android:background="@drawable/bottom_app_bar_bg"
+            android:elevation="4dp"
+            app:menu="@menu/bottom_menu"/>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
