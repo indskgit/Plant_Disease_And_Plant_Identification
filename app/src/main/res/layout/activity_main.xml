@@ -108,14 +108,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--                <TextView-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:textSize="23sp"-->
-            <!--                    android:textColor="@color/black"-->
-            <!--                    android:text="@string/lorem">-->
-
-            <!--                </TextView>-->
 
             <LinearLayout
                 android:id="@+id/diseaseDetection"
@@ -133,7 +125,7 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/frame_layoutl_bg">
+                    android:background="@drawable/frame_layout_bg">
 
                     <!--                            <LinearLayout-->
                     <!--                                android:layout_width="match_parent"-->
@@ -146,6 +138,7 @@
                         android:layout_height="156dp"
                         android:layout_marginTop="27dp"
                         android:background="@drawable/plant_tropical"
+                        android:contentDescription="plant_bg"
                         android:clickable="true"
                         android:focusable="true">
 
@@ -176,7 +169,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="14dp"
-                    android:background="@drawable/frame_layoutl_bg">
+                    android:background="@drawable/frame_layout_bg">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -192,6 +185,7 @@
                             android:background="@drawable/insect"
                             android:clickable="true"
                             android:focusable="true"
+                            android:contentDescription="@string/pest_bg"
                             android:scaleType="centerCrop" />
                     </LinearLayout>
 
@@ -212,7 +206,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/frame_layoutl_bg">
+                    android:background="@drawable/frame_layout_bg">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -227,6 +221,7 @@
                             android:background="@drawable/soil_detection"
                             android:clickable="true"
                             android:focusable="true"
+                            android:contentDescription="@string/soilContentDescription"
                             android:scaleType="centerCrop" />
                     </LinearLayout>
 
