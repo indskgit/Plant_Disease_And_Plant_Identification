@@ -100,7 +100,7 @@
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <LinearLayout
@@ -109,13 +109,13 @@
             android:orientation="vertical">
 
 
-            <LinearLayout
-                android:id="@+id/diseaseDetection"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginVertical="10dp"
-                android:layout_marginStart="90dp"
-                android:orientation="vertical">
+<!--            <LinearLayout-->
+<!--                android:id="@+id/diseaseDetection"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginVertical="10dp"-->
+<!--                android:layout_marginStart="90dp"-->
+<!--                android:orientation="vertical">-->
 
                 <!--                    <androidx.cardview.widget.CardView-->
                 <!--                        android:layout_width="match_parent"-->
@@ -123,8 +123,11 @@
                 <!--                        android:foreground="@drawable/nestedscroll_bg">-->
 
                 <FrameLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="11dp"
+
                     android:background="@drawable/frame_layout_bg">
 
                     <!--                            <LinearLayout-->
@@ -166,9 +169,10 @@
                 <!--                    making new frame Layout and then adding Image tom it to give same color for all nested view to same-->
                 <!--                    i can define it inside previous frame layout but mai color dalna chata tha aur wasie har ek me dalna padta -->
                 <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="14dp"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="11dp"
                     android:background="@drawable/frame_layout_bg">
 
                     <LinearLayout
@@ -203,9 +207,10 @@
                 </FrameLayout>
 
                 <FrameLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="11dp"
                     android:background="@drawable/frame_layout_bg">
 
                     <LinearLayout
@@ -227,10 +232,10 @@
 
                     <TextView
                         android:id="@+id/soilDetection"
-                        android:layout_width="290dp"
+                        android:layout_width="200dp"
                         android:layout_height="69dp"
                         android:layout_gravity="center"
-                        android:layout_marginStart="57dp"
+                        android:layout_marginStart="50dp"
                         android:text="@string/soil_detection"
                         android:textAlignment="center"
                         android:textColor="@color/white"
@@ -239,7 +244,7 @@
                 </FrameLayout>
 
             </LinearLayout>
-        </LinearLayout>
+<!--        </LinearLayout>-->
 
 
     </androidx.core.widget.NestedScrollView>
@@ -256,7 +261,6 @@
             android:layout_gravity="bottom|center"
             app:itemTextColor="@drawable/bottom_icon_selector"
             app:itemIconTint="@drawable/bottom_icon_selector"
-            android:background="@drawable/bottom_app_bar_bg"
             android:elevation="4dp"
             app:menu="@menu/bottom_menu"/>
 
