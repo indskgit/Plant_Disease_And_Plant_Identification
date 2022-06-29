@@ -141,7 +141,7 @@
                         android:layout_height="156dp"
                         android:layout_marginTop="27dp"
                         android:background="@drawable/plant_tropical"
-                        android:contentDescription="plant_bg"
+                        android:contentDescription="@string/plantContentDescription"
                         android:clickable="true"
                         android:focusable="true">
 
@@ -188,9 +188,10 @@
                             android:layout_marginBottom="59dp"
                             android:background="@drawable/insect"
                             android:clickable="true"
-                            android:focusable="true"
                             android:contentDescription="@string/pest_bg"
-                            android:scaleType="centerCrop" />
+                            android:focusable="true"
+                            android:scaleType="centerCrop"
+                            tools:ignore="ImageContrastCheck" />
                     </LinearLayout>
 
                     <TextView
