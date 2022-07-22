@@ -8,19 +8,24 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:background="@color/teal_200">-->
+<!--    </androidx.appcompat.widget.Toolbar>-->
+
 
     <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="300dp"
-            app:contentScrim="@color/textBlue"
-            app:expandedTitleTextAppearance="@style/expandedBarTextStyle"
+            android:layout_height="wrap_content"
             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
             app:titleTextColor="@color/white">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -28,6 +33,8 @@
                 android:background="@drawable/dashboard_bg"
                 android:orientation="vertical"
                 android:paddingHorizontal="20dp">
+
+
 
                 <ImageView
                     android:id="@+id/treeLogo"
@@ -57,7 +64,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif"
+                    android:fontFamily="sans-serif-condensed"
                     android:text="@string/Dashboard_moto1"
                     android:textAlignment="center"
                     android:textColor="#546E7A"
@@ -77,26 +84,22 @@
                     android:hint="@string/search_hint"
                     android:inputType="text"
                     android:minHeight="50dp"
-                    android:paddingHorizontal="23dp"
+                    android:paddingHorizontal="9dp"
                     android:textColor="@color/white"
                     android:textColorHint="@android:color/white"
                     android:textSize="22sp">
 
                 </EditText>
 
+
             </LinearLayout>
 
-            <androidx.appcompat.widget.Toolbar
-                android:layout_width="wrap_content"
-                android:layout_height="?attr/actionBarSize"
-                app:titleTextColor="@color/white">
-
-
-            </androidx.appcompat.widget.Toolbar>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
+
     </com.google.android.material.appbar.AppBarLayout>
+
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -127,7 +130,6 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginTop="11dp"
-
                     android:background="@drawable/frame_layout_bg">
 
                     <!--                            <LinearLayout-->
@@ -245,6 +247,8 @@
                 </FrameLayout>
 
             </LinearLayout>
+
+
 <!--        </LinearLayout>-->
 
 

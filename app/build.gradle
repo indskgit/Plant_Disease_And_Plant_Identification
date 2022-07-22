@@ -27,13 +27,18 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        mlModelBinding true
+    }
 }
 
 dependencies {
 
-    implementation 'androidx.navigation:navigation-fragment:2.4.2'
-    implementation 'androidx.navigation:navigation-ui:2.4.2'
-    def mdcVersion='1.5.0'
+    implementation 'androidx.navigation:navigation-fragment:2.5.0'
+    implementation 'androidx.navigation:navigation-ui:2.5.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.1'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.4.1'
+    def mdcVersion= '1.6.1'
     implementation 'androidx.appcompat:appcompat:1.4.2'
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -43,4 +48,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation 'com.google.android.material:material:1.6.1'
     implementation "com.google.android.material:material:${mdcVersion}"
+
+    //
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.1'
+    implementation 'org.tensorflow:tensorflow-lite-metadata:0.4.1'
+    implementation 'com.google.android.gms:play-services-fitness:21.1.0'
 }

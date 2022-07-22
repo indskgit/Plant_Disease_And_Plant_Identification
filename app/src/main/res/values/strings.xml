@@ -24,4 +24,7 @@
     <string name="you">You</string>
     <string name="soilContentDescription">soil_bg</string>
     <string name="plantContentDescription">plant_bg</string>
+    <string name="scan_your_crop">Scan Your Crop</string>
+    <string name="detected">DETECTED</string>
+    <string name="click_on_result_to_know_more">CLick On result To know more</string>
 </resources>

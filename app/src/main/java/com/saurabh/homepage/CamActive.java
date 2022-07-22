@@ -1,156 +1,150 @@
 package com.saurabh.homepage;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.media.ThumbnailUtils;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.navigation.NavigationBarView;
 
-import java.util.Objects;
+import com.saurabh.homepage.R;
+import com.saurabh.homepage.ml.DiseaseDetection;
+
+import org.tensorflow.lite.DataType;
+import org.tensorflow.lite.support.tensorbuffer.TensorBuffer;
+
+import java.io.IOException;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
 
 public class CamActive extends AppCompatActivity {
 
-    private ImageView camPic;
-
+    TextView result, demoTxt, classified, clickHere;
+    ImageView imageView;
+    Button picture;
+    int imageSize = 224;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cam_active);
 
 
-        camPic = findViewById(R.id.camPic);
-        Button fab = (Button) findViewById(R.id.fab);
+        result = findViewById(R.id.result);
+        imageView = findViewById(R.id.imageView);
+        picture = findViewById(R.id.button);
 
-        fab.setOnClickListener(v -> chooseProfilePicture());
+        demoTxt = findViewById(R.id.demoText);
+        classified = findViewById(R.id.classified);
+        clickHere = findViewById(R.id.click_here);
+
+        demoTxt.setVisibility(View.VISIBLE);
+        clickHere.setVisibility(View.GONE);
+        classified.setVisibility(View.GONE);
+        result.setVisibility(View.GONE);
 
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigator);
-        bottomNavigationView.setSelectedItemId(R.id.menu);
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        picture.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
-                switch (menuItem.getItemId()) {
-
-                    case R.id.menu:
-                        return true;
-
-                    case R.id.home:
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
-
-//                    case R.id.you:
-//                        startActivity(new Intent(getApplicationContext(),Authentication.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
+            public void onClick(View v) {
+                if(checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
+                    Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                    startActivityForResult(cameraIntent,1);
                 }
-                return false;
+                else{
+                    //request camera permission
+                    requestPermissions(new String[]{Manifest.permission.CAMERA},100);
+                }
             }
         });
-   }
+    }
 
-        private void chooseProfilePicture () {
-            AlertDialog.Builder builder = new AlertDialog.Builder(CamActive.this);
-            LayoutInflater inflater = getLayoutInflater();
-            View dialogView = inflater.inflate(R.layout.alert_dialog_profile_picture, null);
-            builder.setCancelable(false);
-            builder.setView(dialogView);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == 1 && resultCode == RESULT_OK){
+            Bitmap image = (Bitmap) data.getExtras().get("data");
+            int dimension = Math.min(image.getWidth(),image.getHeight());
+            image = ThumbnailUtils.extractThumbnail(image,dimension,dimension);
 
-            ImageView imageViewADPPCamera = dialogView.findViewById(R.id.imageViewADPPCamera);
-            ImageView imageViewADPPGallery = dialogView.findViewById(R.id.imageViewADPPGallery);
 
-            final AlertDialog alertDialogProfilePicture = builder.create();
-            alertDialogProfilePicture.show();
+            imageView.setImageBitmap(image);
 
-            imageViewADPPCamera.setOnClickListener(view -> {
-                if (checkAndRequestPermissions()) {
-                    takePictureFromCamera();
-                    alertDialogProfilePicture.dismiss();
+            demoTxt.setVisibility(View.GONE);
+            clickHere.setVisibility(View.VISIBLE);
+            classified.setVisibility(View.VISIBLE);
+            result.setVisibility(View.VISIBLE);
+
+            image = Bitmap.createScaledBitmap(image,imageSize,imageSize,false);
+            classifyImage(image);
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void classifyImage(Bitmap image) {
+        try {
+            DiseaseDetection model = DiseaseDetection.newInstance(getApplicationContext());
+
+            // Creates inputs for reference.
+            TensorBuffer inputFeature0 = TensorBuffer.createFixedSize(new int[]{1, 224,224, 3}, DataType.FLOAT32);
+            ByteBuffer byteBuffer = ByteBuffer.allocateDirect(4 * 224 * 224 * 3);
+            byteBuffer.order(ByteOrder.nativeOrder());
+
+            //get 1d array of 224*224 pixels in image
+            int[] intValue = new int[imageSize*imageSize];
+            image.getPixels(intValue,0,image.getWidth() ,0,0,image.getWidth(),image.getHeight());
+
+            // Iterate Over pixel and extract R,G,B value , add to bytebuffer
+            int pixel = 0;
+            for (int i = 0; i<imageSize;i++){
+                for (int j=0;j<imageSize;j++){
+                    int val = intValue[pixel++];//RGB
+                    byteBuffer.putFloat(((val >> 16)& 0xFF)*(1.f / 255.f));
+                    byteBuffer.putFloat(((val >> 8)& 0xFF)*(1.f / 255.f));
+                    byteBuffer.putFloat((val & 0xFF)*(1.f / 255.f));
                 }
-            });
-//
-            imageViewADPPGallery.setOnClickListener(new View.OnClickListener() {
+            }
+            inputFeature0.loadBuffer(byteBuffer);
+            //run model interface
+            DiseaseDetection.Outputs outputs = model.process(inputFeature0);
+            TensorBuffer outputFeature0 = outputs.getOutputFeature0AsTensorBuffer();
+
+            float[] confidence = outputFeature0.getFloatArray();
+            //find index of class with biggest confidence
+            int maxPos = 0;
+            float maxConfidence = 0;
+            for (int i = 0;i<confidence.length;i++){
+                if (confidence[i] > maxConfidence){
+                    maxConfidence = confidence[i];
+                    maxPos = i;
+                }
+            }
+            String[] classes = {"Pepper Bell Bacterial Spot","Healthy Pepper Bell","Potato Early Blight","Healthy Potato","Potato Late Blight","Tomato Target Spot","Tomato Mosaic Virus","Tomato Yellow Leaf Curl Virus","Tomato Bacterial Spot","Tomato Early Blight","Healthy Tomato","Tomato Late Blight","Tomato Leaf Mold","Tomato Septori Leaf Spot","Tomato Spider Mites"};
+            result.setText(classes[maxPos]);
+            result.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view) {
-                    takePictureFromGallery();
-                    alertDialogProfilePicture.dismiss();
+                public void onClick(View v) {
+                    //to search disease on internet
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/search?q="+result.getText())));
                 }
             });
-        }
 
-        private void takePictureFromGallery () {
-            Intent pickPhoto = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-            startActivityForResult(pickPhoto, 1);
-        }
-
-        @SuppressLint("QueryPermissionsNeeded")
-        private void takePictureFromCamera () {
-            Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            if (takePicture.resolveActivity(getPackageManager()) != null) {
-                startActivityForResult(takePicture, 2);
-            }
-        }
-
-        @Override
-        protected void onActivityResult ( int requestCode, int resultCode, @Nullable Intent data){
-            super.onActivityResult(requestCode, resultCode, data);
-            switch (requestCode) {
-                case 1:
-                    if (resultCode == RESULT_OK) {
-                        Uri selectedImageUri = Objects.requireNonNull(data).getData();
-                        camPic.setImageURI(selectedImageUri);
-                    }
-                    break;
-                case 2:
-                    if (resultCode == RESULT_OK) {
-                        Bundle bundle = Objects.requireNonNull(data).getExtras();
-                        Bitmap bitmapImage = (Bitmap) bundle.get("data");
-                        camPic.setImageBitmap(bitmapImage);
-                    }
-                    break;
-            }
-        }
-
-        private boolean checkAndRequestPermissions () {
-            if (Build.VERSION.SDK_INT >= 23) {
-                int cameraPermission = ActivityCompat.checkSelfPermission(CamActive.this, Manifest.permission.CAMERA);
-                if (cameraPermission == PackageManager.PERMISSION_DENIED) {
-                    ActivityCompat.requestPermissions(CamActive.this, new String[]{Manifest.permission.CAMERA}, 20);
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        @Override
-        public void onRequestPermissionsResult ( int requestCode, @NonNull String[] permissions,
-        @NonNull int[] grantResults){
-            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-            if (requestCode == 20 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                takePictureFromCamera();
-            } else
-                Toast.makeText(CamActive.this, "Permission not Granted", Toast.LENGTH_SHORT).show();
+            model.close();
+        }catch (IOException e){
+            Toast.makeText(this, "Network Error", Toast.LENGTH_SHORT).show();
         }
     }
+}
