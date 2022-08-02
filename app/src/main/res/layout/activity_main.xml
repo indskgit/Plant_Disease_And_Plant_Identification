@@ -255,17 +255,19 @@
     </androidx.core.widget.NestedScrollView>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom">
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="12dp">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_navigator"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
             android:layout_gravity="bottom|center"
             app:itemTextColor="@drawable/bottom_icon_selector"
             app:itemIconTint="@drawable/bottom_icon_selector"
+            android:background="@drawable/bottom_app_bar_bg"
             android:elevation="4dp"
             app:menu="@menu/bottom_menu"/>
 

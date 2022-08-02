@@ -39,7 +39,7 @@ public class Welcome extends AppCompatActivity {
         detectDisease.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent disease = new Intent(Welcome.this, MainActivity.class);
+                Intent disease = new Intent(Welcome.this, LoginActivity.class);
                 Welcome.this.startActivity(disease);
             }
         });

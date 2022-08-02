@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
                     switch (menuItem.getItemId())
                     {
                         case R.id.menu:
-                            startActivity(new Intent(getApplicationContext(), CamActive.class));
+                            startActivity(new Intent(getApplicationContext(), menupage.class));
                             overridePendingTransition(0, 0);
                             return true;
 
@@ -50,10 +50,10 @@ public class MainActivity extends AppCompatActivity {
                             return true;
 
 
-//                    case R.id.you:
-//                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
-//                        overridePendingTransition(0,0);
-//                        return true;
+                    case R.id.you:
+                        startActivity(new Intent(getApplicationContext(),ProfileActivity.class));
+                        overridePendingTransition(0,0);
+                        return true;
                     }
                     return false;
                 }

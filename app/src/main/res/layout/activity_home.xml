@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="415dp"
+        android:layout_height="245dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/top_but" />
+
+    <TextView
+        android:layout_width="172dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="40dp"
+        android:text="Profile"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="44dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="380dp"
+        android:layout_height="567dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.841">
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="377dp"
+            android:layout_height="506dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="57dp"
+            android:layout_marginBottom="4dp"
+            app:srcCompat="@drawable/mid_but" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="141dp"
+            android:layout_height="143dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="113dp"
+            android:layout_marginEnd="126dp"
+            android:layout_marginBottom="424dp"
+            app:srcCompat="@drawable/boy_avatar" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="321dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="348dp"
+            android:text="Anand Singh"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="42dp"
+            android:layout_height="37dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="302dp"
+            android:layout_marginBottom="205dp"
+            android:src="@drawable/iconsmail" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="91dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="204dp"
+            android:text="dec07.anand@gmail.com"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="63dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="123dp"
+            android:layout_marginEnd="118dp"
+            android:layout_marginBottom="64dp"
+            android:background="@color/purple_200"
+            android:text="Logout"
+            android:textAlignment="center"
+            android:textSize="22dp"
+            android:textStyle="italic" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
