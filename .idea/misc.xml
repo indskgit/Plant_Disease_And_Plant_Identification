@@ -4,16 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.168" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/about_us_bg.xml" value="0.122" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/bottom_app_bar_bg.xml" value="0.1" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/bottom_app_bar_svg.xml" value="0.2095" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/bottom_icon_selector.xml" value="0.166" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/bottom_nav_bar_bg.xml" value="0.148" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/button_background_blue.xml" value="0.122" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/buttonshape.xml" value="0.122" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/content_bg.xml" value="0.2545" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/dashboard_bg.xml" value="0.2545" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/dialogue_bg.xml" value="0.1925" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/frame_layoutl_bg.xml" value="0.2555" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/ic__122462_menu_alt_icon.xml" value="0.1505" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/ic__671722_camera_icon.xml" value="0.198" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/ic_baseline_arrow_forward_ios_24.xml" value="0.1" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.1505" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1505" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.1505" />
@@ -23,23 +27,38 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/ic_launcher_background.xml" value="0.168" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/ic_nature_plant_tree_icon.xml" value="0.198" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/ic_navigation_icon.xml" value="0.198" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/ic_register_hero.xml" value="0.1" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/ic_you_icon.xml" value="0.1505" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/mainpage_bg.xml" value="0.228" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/menubtn.xml" value="0.122" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/mid_but.xml" value="0.239" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/plantsbg.xml" value="0.228" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/profile_image_bg.xml" value="0.239" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/search_bg.xml" value="0.2" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/search_btn.xml" value="0.1" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/sign_in_singn_up_btn_bg.xml" value="0.208" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/top_but.xml" value="0.239" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/drawable/welcome_button_bg.xml" value="0.1685" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_about.xml" value="0.25" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_authentication.xml" value="0.2" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_bottom_navigation_drawer.xml" value="0.25" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_cam_active.xml" value="0.10400000000000001" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_contactus.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_forgot_password.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_main.xml" value="0.12" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_menupage.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_profile.xml" value="0.152" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_start_screen.xml" value="0.152" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/activity_welcome.xml" value="0.25" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/alert_dialog_profile_picture.xml" value="0.1" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/fragment_1.xml" value="0.25" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/fragment_2.xml" value="0.25" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/menu/bottom_menu.xml" value="0.152" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/nestedmenu.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/layout/newlayout.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/menu/bottom_menu.xml" value="0.264" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/menu/bottom_navigation.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/menu/bottom_navigation_bar.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/HomePage/app/src/main/res/menu/sfvsvs.xml" value="0.20427350427350427" />
