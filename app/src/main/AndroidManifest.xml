@@ -17,6 +17,16 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".pest_Detection"
+            android:exported="false" />
+        <activity
+            android:name=".new_cam_page"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".menupage"
             android:exported="false" />
         <activity

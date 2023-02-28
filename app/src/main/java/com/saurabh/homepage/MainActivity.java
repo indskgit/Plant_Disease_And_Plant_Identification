@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView treeLogo = findViewById(R.id.treeLogo);
         TextView plant_Disease = findViewById(R.id.plant_Disease);
         TextView pest_Detection = findViewById(R.id.pest_Detection);
+        TextView soilDetection = findViewById(R.id.soilDetection);
 
 
         treeLogo.setOnClickListener(v -> Toast.makeText(MainActivity.this, "I am your Friend", Toast.LENGTH_SHORT).show());
@@ -74,10 +75,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         pest_Detection.setOnClickListener(v -> {
-            Intent pest = new Intent(MainActivity.this, CamActive.class);
+            Intent pest = new Intent(MainActivity.this, pest_Detection.class);
             startActivity(pest);
         });
 
+        soilDetection.setOnClickListener(v -> {
+            Intent soil = new Intent(MainActivity.this, CamActive.class);
+            startActivity(soil);
+        });
     }
 
 
