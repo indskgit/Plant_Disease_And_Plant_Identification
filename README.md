@@ -38,14 +38,18 @@
 - `Run the app in AVD/Physical Device.`
 
 
-
 TODO:
 
 1. Add more features
-2. Add detection for Weeds, Soil
+2. Add detection for Weeds
 3. Results more accurate
 
 ## Collaborators:
 
 - https://github.com/Anand-Singh-techie
 - https://github.com/indskgit
+
+
+## LICENSE
+-[MIT] app/LICENSE
+C:\Users\skuma\AndroidStudioProjects\HomePage\app\LICENSE
