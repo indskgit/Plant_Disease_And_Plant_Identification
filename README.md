@@ -48,8 +48,3 @@ TODO:
 
 - https://github.com/Anand-Singh-techie
 - https://github.com/indskgit
-
-
-## LICENSE
--[MIT] app/LICENSE
-C:\Users\skuma\AndroidStudioProjects\HomePage\app\LICENSE
