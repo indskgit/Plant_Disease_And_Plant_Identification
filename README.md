@@ -2,6 +2,9 @@
 
 ⚡️ A application design to detect the plant disease by using the plant leaf image.
 
+
+![AgroApp](https://github.com/indskgit/Plant_Disease_And_Plant_Identification/assets/88468596/30544256-1fc2-4334-93af-469dd4adcefb)
+
 - Landing Page
 <img src="https://user-images.githubusercontent.com/94180760/216771359-54fd7a91-3cd9-4aae-9be5-bde6762ddc31.jpg"  width="300" height="600">
 
@@ -20,15 +23,6 @@
 - Detection Page
 <img src="https://user-images.githubusercontent.com/94180760/216772120-31c1efd9-d815-450a-be15-0e1ea09e5e54.jpg" width="300" height="600">
 
-
-
-
-## Features: 
-- Detect the plant disease.
-- Ways to cure the disease is also mentioned.
-- User login, authentication and registration (Firebase Auth).
-- User Profile Page.
-- User Profile Picture.
 
 ## Installations and setup
 
